@@ -20,7 +20,7 @@ def home():
 # Get the first day of the current month
 first_day_of_month = today.replace(day=1)
 def get_hpi(input_date=first_day_of_month):
-    dallas_hpif= pd.read_csv("C:/Users/xiaoy/Desktop/DataGalacier/github_repo/house_prediction/Dallas_HPIF.csv")
+    dallas_hpif= pd.read_csv("Dallas_HPIF.csv")
     dallas_hpif['DATE'] = pd.to_datetime(dallas_hpif['DATE'], format='%m/%d/%Y').dt.date
     dallas_hpif=dallas_hpif.sort_values(by='DATE')
     dallas_hpif['hpi_1month_lag'] = dallas_hpif['HPI'].shift(1)  # Lag by 1 month
